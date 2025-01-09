@@ -1,0 +1,249 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+body {
+    background: #333;
+}
+.headPadding {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.chegara {
+    width: 60%;
+}
+
+nav {
+    background: #333;
+    color: white;
+    padding: 2rem 3rem;
+    font-size: 2rem;
+  }
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+ .nav-container ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+ .nav-container ul li a {
+    color: white;
+    text-decoration: none;
+  }
+  #menu-bars {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+  @keyframes slideDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+#boshSahifa {
+    /* position: fixed; */
+    width: 100%;
+    height: 100vh;
+}
+.header {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: -2;
+}
+.header img {
+    width: 100%;
+    height: 100%;
+}
+header .head {
+    width: 100%; 
+    height: 100vh;
+    background: #00000093;
+}
+header .head .headBox {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    /* background: #000; */
+}
+header .head .headText {
+    color: #fff;
+    text-align: center;
+    width: 500px;
+    font-size: 2rem;
+}
+header .head .headText h1 {
+    /* font-size: ; */
+    margin-bottom: 5rem;
+}
+header .head .headText h1 span {
+    font-size: 5rem;
+    color: aqua;
+    font-weight: bold;
+}
+header .head .headText a {
+    text-decoration: none;
+    padding: 2rem;
+    border-radius: 1.2rem;
+    background: aqua;
+    color: black;
+}
+header .head .headText a:active {
+    color:aqua;
+    background: #000;
+}
+
+/* yangiMangalar */
+
+.engYangi {
+    width: 100%;
+    /* height: 100vh; */
+    background: #1F1F1F;
+}
+.yangiMangalar, .barchaMangalar {
+    display: grid;
+    justify-content: center;
+    padding: 5rem 0rem;
+    background: #1f1f1f;
+}
+ .yangiText {
+    padding: 30px 0;
+}
+.yangiText h1 {
+    font-size: 4rem;
+    color: #fff
+}
+.allMangas {
+    /* width: 100%; */
+    /* background: #000; */
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    gap: 20px;
+    row-gap: 100px;
+    /* padding: 20px; */
+
+}
+
+.allMangas .mangaCard img {
+    height: 300px;
+    /* background: #000; */
+    opacity: 0;
+}
+.allMangas .mangaCard  h1  {
+    font-size: 1.8rem;
+    margin: 10px 0;
+    color: #fff;
+}
+/*   */
+
+
+
+/* Responsivlik */
+@media (max-width: 1024px) {
+    nav .navbar {
+        padding: 2rem 5rem;
+    }
+    .chegara {
+        width: 80%;
+    }
+    .allMangas {
+        grid-template-columns: repeat(3, 1fr);
+    }
+  
+}
+@media (max-width: 768px) {
+    nav .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    nav .navbar ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .allMangas {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    nav .nav-container hr {
+        display: none;  
+    }
+
+    .nav-container ul {
+        display: none;
+        flex-direction: column;
+        background: #444;
+        position: absolute;
+        top: 60px;
+        right: 10px;
+        width: 200px;
+      }
+     .nav-container ul.show {
+        display: flex;
+      }
+      #menu-bars {
+        display: block;
+      }
+
+
+        nav .nav-container ul {
+            display: none;
+            flex-direction: column;
+            background: #333;
+            position: absolute;
+            top: 60px;
+            right: 10px;
+            width: 200px;
+            border-radius: 10px;
+            padding: 10px;
+            overflow: hidden;
+        }
+    
+        nav .nav-container ul.show {
+            display: flex;
+            animation: slideDown 0.3s ease-in-out;
+        }
+    
+        nav .nav-container ul li {
+            margin: 10px 0;
+        }
+    }
+@media (max-width: 480px) {
+    html {
+        font-size: 50%;
+    }
+    nav .navbar {
+        padding: 1rem 2rem;
+    }
+    .allMangas {
+        grid-template-columns: 1fr;
+    }
+    header .head .headText {
+        width: 100%;
+        font-size: 1.5rem;
+    }
+    header .head .headText h1 span {
+        font-size: 3rem;
+    }
+}
